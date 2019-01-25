@@ -14,6 +14,9 @@
     "coverage": "react-scripts test --env=jsdom --coverage --coverageReporters=text-lcov | coveralls",
     "eject": "react-scripts eject"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "coveralls": "^3.0.2"
