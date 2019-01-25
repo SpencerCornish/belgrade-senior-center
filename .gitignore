@@ -236,4 +236,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+
+bundle.js
 # End of https://www.gitignore.io/api/node,macos,windows,firebase,intellij,visualstudiocode

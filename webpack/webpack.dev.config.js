@@ -31,7 +31,7 @@ module.exports = {
 		]
 	},
 	output: {
-		path: __dirname + '/dist',
+		path: __dirname + '/../',
 		filename: 'bundle.js'
 	},
 	devServer: {
