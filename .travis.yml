@@ -3,5 +3,12 @@ cache: npm
 node_js:
   - "11"
 script:
-  - "npm run test"
-  - "npm run coverage"
+  - npm run test
+  - npm run coverage
+deploy:
+  provider: firebase
+  token:
+    secure: "PZ04on+/b7fzefJuCBs45ut8Gwt9pmQGvTG5akRYZKL+y2l0l8yZQTJuHdB5vL585rV0Z7tXk/HqZ1UCg8mHAwIAUJOqRFxjmh3g9CFv3LMihpQaFOb8PWtGorMjEWjb/kHdZ556ahnQIQmE1hgkDiJcB60PWmYevfwbiMtVdUf6tsZ8SWQX76bB8/JJQ6nQuiXxBlnW1gMqsMeGPXSPfn95jycqLSoYf3RPZ5MyjBRzsmISw+r+RxYYWBHR4xdzfuoix2QHPElY2Tk0hRKsciB7y1VWNFtazbR45+4nrG9H+pBvK5HGYoG+H9TWvxdG6zdHARzjkpJ3ClwnRSrh/vRXoGDrQh4CU/eX0Buq1zYwocrmX4uXgCsn+2MHu6Jww00J1j7rbi92Re2sv4pEXhZS1UrykxMh55JxC9GTgJekljsXaJHOzxk58PG+//uX4/4HB2zdCoXHh6IzkXrBML4j23Pu56h6eBbsTykdkEQOoyDHs5EwDDeQRJoaDsdqsMaHXP7t0Pe5Qv8wNQM0QJwM9YGAwEdwtVaTfXtYnhW5784g8QQ+kl4fmIbvW1RUGNNBKj2506sp9N1C+BU/AiDjFJhhoJxcNRl3wJ6tPpwXPTHzLdExtVO6XjaZEGSep5Buu7iu08hZd19Jt+Te0ink3nWBUTSyOAtBkMQ5gwI="
+  project: bsc-development
+  # on:
+  # branch: master
