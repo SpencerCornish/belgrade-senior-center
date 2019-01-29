@@ -8,7 +8,6 @@ script:
   - npm run coverage
 
 before_deploy:
-  - "pwd"
   - "cd functions && npm install && cd .."
 
 deploy:
