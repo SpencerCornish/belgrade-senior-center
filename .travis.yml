@@ -8,8 +8,8 @@ script:
   - npm run coverage
 
 before_deploy:
-  - "npm i eslint eslint-plugin-promise eslint-config-react-app -g"
-  - "npm install"
+  - "pwd"
+  - "cd functions && npm install && cd .."
 
 deploy:
   provider: firebase
