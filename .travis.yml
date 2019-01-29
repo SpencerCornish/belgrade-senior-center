@@ -7,11 +7,12 @@ script:
   - npm run test
   - npm run coverage
 
-before_deploy: "npm i eslint eslint-plugin-promise -g"
+before_deploy:
+  - "npm i eslint eslint-plugin-promise eslint-config-react-app -g"
+  - "npm install"
 
 deploy:
   provider: firebase
-  edge: true
   skip_cleanup: true
   on:
     branch: "add-deploy-to-master-step"
