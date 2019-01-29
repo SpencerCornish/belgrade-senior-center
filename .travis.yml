@@ -6,6 +6,9 @@ script:
   - npm run build
   - npm run test
   - npm run coverage
+
+before_deploy: "npm i eslint -g"
+
 deploy:
   provider: firebase
   edge: true
