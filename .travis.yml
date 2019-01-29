@@ -15,4 +15,4 @@ deploy:
   provider: firebase
   skip_cleanup: true
   on:
-    branch: "add-deploy-to-master-step"
+    branch: "master"
