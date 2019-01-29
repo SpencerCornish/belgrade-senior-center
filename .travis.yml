@@ -7,7 +7,7 @@ script:
   - npm run test
   - npm run coverage
 
-before_deploy: "npm i eslint -g"
+before_deploy: "npm i eslint eslint-plugin-promise -g"
 
 deploy:
   provider: firebase
