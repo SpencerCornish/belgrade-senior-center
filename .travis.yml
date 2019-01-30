@@ -3,9 +3,8 @@ dart:
   - "stable"
 cache:
   directories:
-    - ~/.pub_cache
+    - $HOME/.pub_cache/
 dart_task:
-  - test: --platform vm
   - test: --platform chrome
   # TODO: Setup coverage
   - dartanalyzer: --fatal-warnings lib
