@@ -1,6 +1,9 @@
 language: dart
 dart:
   - "stable"
+cache:
+  directories:
+    - ~/.pub_cache
 dart_task:
   - test: --platform vm
   - test: --platform chrome
