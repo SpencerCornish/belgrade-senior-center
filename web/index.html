@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Belgrade Senior Center</title>
+    <!-- <base> is needed for routing properly -->
+    <base href="/" />
+    <script>
+      (function() {
+        var m = document.location.pathname.match(/^(\/[-\w]+)+\/web($|\/)/);
+        document.write('<base href="' + (m ? m[0] : "/") + '" />');
+      })();
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Firebase Embed Code -->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-firestore.js"></script>
+    <!-- Font Awesome Embed Code -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+    ></script>
+
+    <!-- Dart -->
+    <script defer src="main.dart.js"></script>
+    <!-- Bulma/Animation Link -->
+    <link
+      async
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link async rel="icon" type="image/png" href="favicon.png" />
+  </head>
+
+  <body>
+    <!-- A backup container for adding capchas. Can be removed if Capchas are unneccessary for the use case -->
+    <div class="cap"></div>
+    <div class="app-container"></div>
+  </body>
+</html>

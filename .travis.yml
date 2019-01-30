@@ -1,17 +1,18 @@
-language: node_js
-cache: npm
-node_js:
-  - "11"
-script:
-  - npm run build
-  - npm run test
-  - npm run coverage
+language: dart
+dart:
+  - "stable"
+dart_task:
+  - test: --platform vm
+  - test: --platform chrome
+  # TODO: Setup coverage
+  - dartanalyzer: --fatal-warnings lib
+  - dartfmt: --check
+# Fix deploy once Dart is done
+# before_deploy:
+#   - "cd functions && npm install && cd .."
 
-before_deploy:
-  - "cd functions && npm install && cd .."
-
-deploy:
-  provider: firebase
-  skip_cleanup: true
-  on:
-    branch: "master"
+# deploy:
+#   provider: firebase
+#   skip_cleanup: true
+#   on:
+#     branch: "master"
