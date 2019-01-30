@@ -7,21 +7,13 @@ help:
 install: ## Runs pub get to get dependencies
 	@pub get
 
-serve: install gen-sass dart-serve ## Serves the frontend app with ddevc
+serve: install dart-serve ## Serves the frontend app with ddevc
 
-firebase-serve: install gen-sass build ## Serves built JS files locally
-	@firebase serve --only hosting
-
-sass: install gen-sass ## Compile the Sass files to css
+firebase-serve: install build ## Serves built JS files locally
+	@firebase serve
 
 format: ## Format the dart files
-	@dartfmt -w -l 120 lib/
-
-gen-sass:
-	@echo "Running sass generation script"
-	@sh ./tool/sass_task.sh
-	@echo "Done running sass generation script"
-
+	@dartfmt -w -l 120 .
 
 dart-serve:
 	@webdev serve

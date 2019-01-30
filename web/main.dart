@@ -16,14 +16,18 @@ StoreContainer storeContainer;
 
 void main() {
   runZoned(() {
-    // Create a reporting client
-    final dsn = SentryDsn.fromString('https://6b2404a092ac4502a821d9911d2a0e56@sentry.io/1311583');
+    // Create an error reporting client
+    final dsn = SentryDsn.fromString('https://56a213c9122449aba00d3b88fa376d42@sentry.io/1383531');
     sentryClient = new SentryClientBrowser(dsn);
 
     storeContainer = new StoreContainer();
     render(new HistoryProvider(child: new Container(new ContainerProps()..storeContainer = storeContainer)),
         querySelector('.app-container'));
-  }, onError: _handleZonedError, zoneSpecification: ZoneSpecification(handleUncaughtError: _handleUncaught));
+  },
+      onError: _handleZonedError,
+      zoneSpecification: ZoneSpecification(
+        handleUncaughtError: _handleUncaught,
+      ));
 }
 
 _handleZonedError(var err, StackTrace stackTrace) {
@@ -43,7 +47,8 @@ _reportToSentry(dynamic err, StackTrace stackTrace) async {
       extra: {
         "path": Uri?.base?.toString(),
         "userPlatform": window?.navigator?.platform,
-        "UID": storeContainer?.store?.state?.user?.uid,
+        // FIXME: Begin sending userdata when possible again
+        // "UID": storeContainer?.store?.state?.user?.uid,
         "StateMap": storeContainer?.store?.state?.toString(),
       },
       exceptionValues: [
