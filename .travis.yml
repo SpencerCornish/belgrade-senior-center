@@ -4,10 +4,28 @@ dart:
 cache:
   directories:
     - $HOME/.pub_cache/
-dart_task:
-  - test: --platform chrome
-  - dartanalyzer: --fatal-warnings lib
-  - dartfmt: true
+
+stages:
+  - test
+  - deploy
+
+jobs:
+  include:
+    - stage: "Testing"
+      name: "Unit Tests"
+      before_script:
+        - "pub get"
+      script:
+        - "pub run test --platform chrome"
+    - stage: "Coverage"
+      name: "Report Code Coverage"
+      before_script:
+        - "pub get"
+      script:
+        - "pub run test --platform chrome"
+    - stage: "Tests" # naming the Tests stage
+      name: "Unit Tests" # names the first Tests stage job
+      script: ./unit-tests
 # Fix deploy once Dart is done
 # before_deploy:
 #   - "cd functions && npm install && cd .."

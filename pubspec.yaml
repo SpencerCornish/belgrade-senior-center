@@ -21,6 +21,7 @@ dependencies:
 
 dev_dependencies:
   test: ^1.5.3
+  coverage:
   build_runner: ^1.2.3
   built_value_generator: ^6.3.0
   build_web_compilers: ^1.0.0
